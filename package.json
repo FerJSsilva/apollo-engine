@@ -10,6 +10,11 @@
     "server": "json-server --watch mock-server/db.json --port 3000"
   },
   "dependencies": {
+    "apollo-datasource-rest": "^0.2.1",
+    "apollo-server": "^2.2.5",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {
     "json-server": "^0.14.0"
   }
 }
