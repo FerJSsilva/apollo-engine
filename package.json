@@ -1,0 +1,9 @@
+{
+  "name": "apollo-engine",
+  "version": "0.0.1",
+  "description": "Apollo Server 2 data management",
+  "main": "index.js",
+  "repository": "https://github.com/FerJSsilva/apollo-engine.git",
+  "author": "Fernando Silva <Fernando.Silva@vistajet.com>",
+  "license": "MIT"
+}
