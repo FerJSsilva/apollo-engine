@@ -7,6 +7,8 @@
   "author": "Fernando Silva <Fernando.Silva@vistajet.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node apollo-server/index.js",
+    "dev": "nodemon apollo-server/index.js",
     "server": "json-server --watch mock-server/db.json --port 3000"
   },
   "dependencies": {
