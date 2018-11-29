@@ -1,16 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
 const ApiManager = require('./datasource/ApiManager');
-
-const books = [
-    {
-      title: 'Percy Jackson and the lightning thief',
-      author: 'Ryik Riordan',
-    },
-    {
-      title: 'Jurassic Park',
-      author: 'Michael Crichton',
-    },
-  ];
   
   const typeDefs = gql`
     type Post {
@@ -20,7 +9,21 @@ const books = [
       body: String
     }
 
+    input PostInput {
+      id: ID
+      userId: ID!
+      title: String
+      body: String
+    }
+
     type User {
+      id: ID
+      name: String
+      username: String
+      email: String
+    }
+
+    input UserInput {
       id: ID
       name: String
       username: String
@@ -33,6 +36,12 @@ const books = [
       users: [User]
       user(id: ID!): User
     }
+
+    type Mutation {
+      newPost(postInput: PostInput): Post,
+      newUser(userInput: UserInput): User,
+    }
+
   `;
 
   const resolvers = {
@@ -48,6 +57,14 @@ const books = [
       },
       user: async (_source, args, { dataSources }) => {
         return dataSources.ApiManager.getUser(args.id);
+      },
+    },
+    Mutation: {
+      newPost: async (_source, args, { dataSources }) => {
+        return dataSources.ApiManager.postPost(args);
+      },
+      newUser: async (_source, args, { dataSources }) => {
+        return dataSources.ApiManager.postUser(args);
       },
     },
   };
