@@ -31,6 +31,9 @@ const books = [
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  engine: {
+    apiKey: "service:FerJSsilva-2372:0bGzWAYz7Pt7i3g3QVNVyw" //demo-engine api key
+    }
 });
 
 server.listen().then(({ url }) => {
