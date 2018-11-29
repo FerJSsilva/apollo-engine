@@ -5,5 +5,11 @@
   "main": "index.js",
   "repository": "https://github.com/FerJSsilva/apollo-engine.git",
   "author": "Fernando Silva <Fernando.Silva@vistajet.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "server": "json-server --watch mock-server/db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.14.0"
+  }
 }
